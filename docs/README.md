@@ -2,6 +2,12 @@
 
 This directory contains the current foundational architecture for Project Oregon Trail.
 
+## Project control
+
+All meaningful project changes must be recorded in the append-only timestamped log at [`../project-control/RUN_HISTORY.jsonl`](../project-control/RUN_HISTORY.jsonl).
+
+See [`../project-control/CHANGE_LOG_POLICY.md`](../project-control/CHANGE_LOG_POLICY.md) for required fields, UTC timestamp format, logging granularity, validation expectations, and pull-request enforcement.
+
 ## Documents
 
 ### [PROJECT_VISION.md](PROJECT_VISION.md)
