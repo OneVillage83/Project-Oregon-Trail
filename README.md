@@ -8,6 +8,21 @@ The game aims to spend its complexity budget on **what the player can do and wha
 
 The simulation is authoritative. Local AI models may interpret player language and narrate results, but they do not invent or directly modify world state.
 
-## Documentation
+> **The simulation determines what exists. The renderer determines what can be shown. Perception determines what the observing character notices.**
 
-Foundational design and architecture documentation is being developed under `docs/`.
+## Foundational architecture
+
+Start with [`docs/README.md`](docs/README.md).
+
+Current foundation documents cover:
+
+- project vision and emergent campaign philosophy;
+- core design principles;
+- Perception Mode and modular 2D rendering;
+- seeded persistent world generation and technological aging;
+- local/offline AI architecture;
+- World Action Language V1.
+
+## Current next architecture layer
+
+The next major design target is the **World Object & Affordance System**: the universal entity/property model that gives WALang concrete objects, materials, states, capabilities, and transformations to operate upon.
