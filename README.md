@@ -23,6 +23,14 @@ Current foundation documents cover:
 - local/offline AI architecture;
 - World Action Language V1.
 
+## Mandatory project history
+
+Every meaningful change to this repository must be recorded in the append-only timestamped log at [`project-control/RUN_HISTORY.jsonl`](project-control/RUN_HISTORY.jsonl).
+
+The governing rules are defined in [`project-control/CHANGE_LOG_POLICY.md`](project-control/CHANGE_LOG_POLICY.md). The requirement applies to design decisions, documentation, source code, schemas, assets, configuration, tests, tooling, experiments, fixes, reversions, and other consequential project work.
+
+Pull requests are checked by `.github/workflows/run-history-check.yml`; changed paths must be covered by newly appended run-history entries.
+
 ## Current next architecture layer
 
 The next major design target is the **World Object & Affordance System**: the universal entity/property model that gives WALang concrete objects, materials, states, capabilities, and transformations to operate upon.
