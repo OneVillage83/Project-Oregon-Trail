@@ -1,0 +1,2 @@
+# Development-only schema validation. No Python runtime is required by the planned game.
+jsonschema==4.26.0

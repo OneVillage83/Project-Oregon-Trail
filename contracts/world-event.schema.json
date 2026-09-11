@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:onevillage:oregon:world-event:0.1.0",
+  "title": "Committed event seed; only simulation produces these",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "event_id", "world_ref", "sequence", "sim_time_s", "causation_ref", "producer", "event"],
+  "properties": {
+    "schema_version": {"const": "0.1.0"},
+    "event_id": {"$ref": "#/$defs/ref"},
+    "world_ref": {"$ref": "#/$defs/ref"},
+    "sequence": {"type": "integer", "minimum": 1, "maximum": 9007199254740991},
+    "sim_time_s": {"$ref": "#/$defs/nonnegative"},
+    "causation_ref": {"$ref": "#/$defs/ref"},
+    "producer": {"const": "simulation"},
+    "event": {"oneOf": [
+      {"type": "object", "additionalProperties": false, "required": ["type", "item_ref", "source_ref", "destination_ref", "quantity_count"], "properties": {"type": {"const": "RESOURCE_TRANSFERRED"}, "item_ref": {"$ref": "#/$defs/ref"}, "source_ref": {"$ref": "#/$defs/ref"}, "destination_ref": {"$ref": "#/$defs/ref"}, "quantity_count": {"type": "integer", "minimum": 1, "maximum": 1000000000}}},
+      {"type": "object", "additionalProperties": false, "required": ["type", "observation_ref", "observer_ref", "subject_ref", "proposition_ref"], "properties": {"type": {"const": "OBSERVATION_ACQUIRED"}, "observation_ref": {"$ref": "#/$defs/ref"}, "observer_ref": {"$ref": "#/$defs/ref"}, "subject_ref": {"$ref": "#/$defs/ref"}, "proposition_ref": {"$ref": "#/$defs/ref"}}},
+      {"type": "object", "additionalProperties": false, "required": ["type", "work_order_ref", "site_ref", "structure_ref", "prototype_ref"], "properties": {"type": {"const": "BUILD_COMPLETED"}, "work_order_ref": {"$ref": "#/$defs/ref"}, "site_ref": {"$ref": "#/$defs/ref"}, "structure_ref": {"$ref": "#/$defs/ref"}, "prototype_ref": {"$ref": "#/$defs/ref"}}}
+    ]}
+  },
+  "$defs": {
+    "ref": {"type": "string", "maxLength": 160, "pattern": "^[a-z][a-z0-9_.-]*:[A-Za-z0-9_.-]{1,120}$"},
+    "nonnegative": {"type": "integer", "minimum": 0, "maximum": 9007199254740991}
+  }
+}
