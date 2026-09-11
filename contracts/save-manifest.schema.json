@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:onevillage:oregon:save-manifest:0.1.0",
+  "title": "Versioned save metadata seed",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "world_ref", "seed", "created_at_utc", "generator_version", "rules_version", "save_version", "fidelity_policy", "last_event_sequence", "oldest_replay_sequence", "content_hash", "state_hash"],
+  "properties": {
+    "schema_version": {"const": "0.1.0"},
+    "world_ref": {"type": "string", "maxLength": 160, "pattern": "^[a-z][a-z0-9_.-]*:[A-Za-z0-9_.-]{1,120}$"},
+    "seed": {"type": "string", "pattern": "^[0-9]{1,20}$"},
+    "created_at_utc": {"type": "string", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$"},
+    "generator_version": {"$ref": "#/$defs/version"},
+    "rules_version": {"$ref": "#/$defs/version"},
+    "save_version": {"$ref": "#/$defs/version"},
+    "fidelity_policy": {"type": "string", "minLength": 1, "maxLength": 80},
+    "last_event_sequence": {"$ref": "#/$defs/sequence"},
+    "oldest_replay_sequence": {"$ref": "#/$defs/sequence"},
+    "content_hash": {"$ref": "#/$defs/hash"},
+    "state_hash": {"$ref": "#/$defs/hash"}
+  },
+  "$defs": {
+    "sequence": {"type": "integer", "minimum": 0, "maximum": 9007199254740991},
+    "version": {"type": "string", "maxLength": 40, "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "architecture_version": "0.2",
+  "contract_version": "0.1.0",
+  "baseline_source_commit": "dbff86a9d512488533ffc2d47319a5bfa49d8ebe",
+  "documentation": "production_specification_uploaded_for_review",
+  "contract_tooling": "seed_schemas_and_static_tests_passed_in_github_actions",
+  "contract_validation": {
+    "tested_head_commit": "06d26ef5e794bad0508bd2a56a33285592b98679",
+    "tested_pr_merge_ref": "8cbae2e1168738d44b07fc38bea68509ebf2a1c4",
+    "workflow_run_id": 34563726988,
+    "unittest_methods_passed": 32,
+    "schemas_checked": 4,
+    "operation_contracts_checked": 12,
+    "positive_baselines_checked": 4,
+    "requirements_mapped": 32,
+    "acceptance_scenarios_declared": 38
+  },
+  "history_validation_run_id": 34563726965,
+  "simulation_kernel": "not_implemented",
+  "game_client": "not_implemented",
+  "gameplay_domains": "specified_not_implemented",
+  "content_library": "not_produced",
+  "model_qualification": "not_run",
+  "device_qualification": "not_run",
+  "gameplay_and_save_benchmarks": "not_run",
+  "shipping_model": null,
+  "lead_model_candidate": "Gemma 4 E4B",
+  "lower_resource_candidate": "Gemma 4 E2B",
+  "enhanced_pc_candidate": "Gemma 4 12B",
+  "next_implementation_work_package": "B-001",
+  "main_merge": "not_merged_requires_separate_review",
+  "validation_evidence": "project-control/VALIDATION_REPORT.md"
+}

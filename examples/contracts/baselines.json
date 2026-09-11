@@ -1,0 +1,18 @@
+{
+  "intent": {
+    "schema_version": "0.1.0", "intent_id": "intent:fixture001", "actor_ref": "actor:player", "observer_ref": "actor:player", "context_revision": 1,
+    "command": {"kind": "ACTION", "actor_ref": "actor:player", "operation": "WAIT", "parameters": {"duration_s": 60}}
+  },
+  "prototype": {
+    "schema_version": "0.1.0", "prototype_id": "prototype:barrel", "display_key": "object.barrel", "material_ref": "material:wood", "mass_g": 15000, "volume_ml": 60000, "capacity_ml": 50000,
+    "functional_roles": ["container", "attachable"], "states": ["open", "sealed", "broken"]
+  },
+  "event": {
+    "schema_version": "0.1.0", "event_id": "event:fixture001", "world_ref": "world:fixture", "sequence": 1, "sim_time_s": 60, "causation_ref": "intent:fixture001", "producer": "simulation",
+    "event": {"type": "RESOURCE_TRANSFERRED", "item_ref": "item:barrel001", "source_ref": "inventory:camp", "destination_ref": "inventory:wagon", "quantity_count": 1}
+  },
+  "save": {
+    "schema_version": "0.1.0", "world_ref": "world:fixture", "seed": "42", "created_at_utc": "2026-09-10T00:00:00Z", "generator_version": "0.1.0", "rules_version": "0.1.0", "save_version": "0.1.0", "fidelity_policy": "fixture-local-v1", "last_event_sequence": 10, "oldest_replay_sequence": 0,
+    "content_hash": "0000000000000000000000000000000000000000000000000000000000000000", "state_hash": "1111111111111111111111111111111111111111111111111111111111111111"
+  }
+}
